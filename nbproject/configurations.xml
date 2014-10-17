@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="include" displayName="include" projectFiles="true">
+        <logicalFolder name="raknet" displayName="raknet" projectFiles="true">
+          <itemPath>include/raknet/AutopatcherPatchContext.h</itemPath>
+          <itemPath>include/raknet/AutopatcherRepositoryInterface.h</itemPath>
+          <itemPath>include/raknet/Base64Encoder.h</itemPath>
+          <itemPath>include/raknet/BitStream.h</itemPath>
+          <itemPath>include/raknet/CCRakNetSlidingWindow.h</itemPath>
+          <itemPath>include/raknet/CCRakNetUDT.h</itemPath>
+          <itemPath>include/raknet/CheckSum.h</itemPath>
+          <itemPath>include/raknet/CloudClient.h</itemPath>
+          <itemPath>include/raknet/CloudCommon.h</itemPath>
+          <itemPath>include/raknet/CloudServer.h</itemPath>
+          <itemPath>include/raknet/CommandParserInterface.h</itemPath>
+          <itemPath>include/raknet/ConnectionGraph2.h</itemPath>
+          <itemPath>include/raknet/ConsoleServer.h</itemPath>
+          <itemPath>include/raknet/DR_SHA1.h</itemPath>
+          <itemPath>include/raknet/DS_BPlusTree.h</itemPath>
+          <itemPath>include/raknet/DS_BinarySearchTree.h</itemPath>
+          <itemPath>include/raknet/DS_BytePool.h</itemPath>
+          <itemPath>include/raknet/DS_ByteQueue.h</itemPath>
+          <itemPath>include/raknet/DS_Hash.h</itemPath>
+          <itemPath>include/raknet/DS_Heap.h</itemPath>
+          <itemPath>include/raknet/DS_HuffmanEncodingTree.h</itemPath>
+          <itemPath>include/raknet/DS_HuffmanEncodingTreeFactory.h</itemPath>
+          <itemPath>include/raknet/DS_HuffmanEncodingTreeNode.h</itemPath>
+          <itemPath>include/raknet/DS_LinkedList.h</itemPath>
+          <itemPath>include/raknet/DS_List.h</itemPath>
+          <itemPath>include/raknet/DS_Map.h</itemPath>
+          <itemPath>include/raknet/DS_MemoryPool.h</itemPath>
+          <itemPath>include/raknet/DS_Multilist.h</itemPath>
+          <itemPath>include/raknet/DS_OrderedChannelHeap.h</itemPath>
+          <itemPath>include/raknet/DS_OrderedList.h</itemPath>
+          <itemPath>include/raknet/DS_Queue.h</itemPath>
+          <itemPath>include/raknet/DS_QueueLinkedList.h</itemPath>
+          <itemPath>include/raknet/DS_RangeList.h</itemPath>
+          <itemPath>include/raknet/DS_Table.h</itemPath>
+          <itemPath>include/raknet/DS_ThreadsafeAllocatingQueue.h</itemPath>
+          <itemPath>include/raknet/DS_Tree.h</itemPath>
+          <itemPath>include/raknet/DS_WeightedGraph.h</itemPath>
+          <itemPath>include/raknet/DataCompressor.h</itemPath>
+          <itemPath>include/raknet/DirectoryDeltaTransfer.h</itemPath>
+          <itemPath>include/raknet/DynDNS.h</itemPath>
+          <itemPath>include/raknet/EmailSender.h</itemPath>
+          <itemPath>include/raknet/EmptyHeader.h</itemPath>
+          <itemPath>include/raknet/EpochTimeToString.h</itemPath>
+          <itemPath>include/raknet/Export.h</itemPath>
+          <itemPath>include/raknet/FileList.h</itemPath>
+          <itemPath>include/raknet/FileListNodeContext.h</itemPath>
+          <itemPath>include/raknet/FileListTransfer.h</itemPath>
+          <itemPath>include/raknet/FileListTransferCBInterface.h</itemPath>
+          <itemPath>include/raknet/FileOperations.h</itemPath>
+          <itemPath>include/raknet/FormatString.h</itemPath>
+          <itemPath>include/raknet/FullyConnectedMesh2.h</itemPath>
+          <itemPath>include/raknet/GetTime.h</itemPath>
+          <itemPath>include/raknet/Getche.h</itemPath>
+          <itemPath>include/raknet/Gets.h</itemPath>
+          <itemPath>include/raknet/GridSectorizer.h</itemPath>
+          <itemPath>include/raknet/HTTPConnection.h</itemPath>
+          <itemPath>include/raknet/HTTPConnection2.h</itemPath>
+          <itemPath>include/raknet/IncrementalReadInterface.h</itemPath>
+          <itemPath>include/raknet/InternalPacket.h</itemPath>
+          <itemPath>include/raknet/Itoa.h</itemPath>
+          <itemPath>include/raknet/Kbhit.h</itemPath>
+          <itemPath>include/raknet/LinuxStrings.h</itemPath>
+          <itemPath>include/raknet/LocklessTypes.h</itemPath>
+          <itemPath>include/raknet/LogCommandParser.h</itemPath>
+          <itemPath>include/raknet/MTUSize.h</itemPath>
+          <itemPath>include/raknet/MessageFilter.h</itemPath>
+          <itemPath>include/raknet/MessageIdentifiers.h</itemPath>
+          <itemPath>include/raknet/NatPunchthroughClient.h</itemPath>
+          <itemPath>include/raknet/NatPunchthroughServer.h</itemPath>
+          <itemPath>include/raknet/NatTypeDetectionClient.h</itemPath>
+          <itemPath>include/raknet/NatTypeDetectionCommon.h</itemPath>
+          <itemPath>include/raknet/NatTypeDetectionServer.h</itemPath>
+          <itemPath>include/raknet/NativeFeatureIncludes.h</itemPath>
+          <itemPath>include/raknet/NativeFeatureIncludesOverrides.h</itemPath>
+          <itemPath>include/raknet/NativeTypes.h</itemPath>
+          <itemPath>include/raknet/NetworkIDManager.h</itemPath>
+          <itemPath>include/raknet/NetworkIDObject.h</itemPath>
+          <itemPath>include/raknet/PS3Includes.h</itemPath>
+          <itemPath>include/raknet/PS4Includes.h</itemPath>
+          <itemPath>include/raknet/PacketConsoleLogger.h</itemPath>
+          <itemPath>include/raknet/PacketFileLogger.h</itemPath>
+          <itemPath>include/raknet/PacketLogger.h</itemPath>
+          <itemPath>include/raknet/PacketOutputWindowLogger.h</itemPath>
+          <itemPath>include/raknet/PacketPool.h</itemPath>
+          <itemPath>include/raknet/PacketPriority.h</itemPath>
+          <itemPath>include/raknet/PacketizedTCP.h</itemPath>
+          <itemPath>include/raknet/PluginInterface2.h</itemPath>
+          <itemPath>include/raknet/RPC4Plugin.h</itemPath>
+          <itemPath>include/raknet/Rackspace.h</itemPath>
+          <itemPath>include/raknet/RakAlloca.h</itemPath>
+          <itemPath>include/raknet/RakAssert.h</itemPath>
+          <itemPath>include/raknet/RakMemoryOverride.h</itemPath>
+          <itemPath>include/raknet/RakNetCommandParser.h</itemPath>
+          <itemPath>include/raknet/RakNetDefines.h</itemPath>
+          <itemPath>include/raknet/RakNetDefinesOverrides.h</itemPath>
+          <itemPath>include/raknet/RakNetSmartPtr.h</itemPath>
+          <itemPath>include/raknet/RakNetSocket.h</itemPath>
+          <itemPath>include/raknet/RakNetSocket2.h</itemPath>
+          <itemPath>include/raknet/RakNetStatistics.h</itemPath>
+          <itemPath>include/raknet/RakNetTime.h</itemPath>
+          <itemPath>include/raknet/RakNetTransport2.h</itemPath>
+          <itemPath>include/raknet/RakNetTypes.h</itemPath>
+          <itemPath>include/raknet/RakNetVersion.h</itemPath>
+          <itemPath>include/raknet/RakPeer.h</itemPath>
+          <itemPath>include/raknet/RakPeerInterface.h</itemPath>
+          <itemPath>include/raknet/RakSleep.h</itemPath>
+          <itemPath>include/raknet/RakString.h</itemPath>
+          <itemPath>include/raknet/RakThread.h</itemPath>
+          <itemPath>include/raknet/RakWString.h</itemPath>
+          <itemPath>include/raknet/Rand.h</itemPath>
+          <itemPath>include/raknet/RandSync.h</itemPath>
+          <itemPath>include/raknet/ReadyEvent.h</itemPath>
+          <itemPath>include/raknet/RefCountedObj.h</itemPath>
+          <itemPath>include/raknet/RelayPlugin.h</itemPath>
+          <itemPath>include/raknet/ReliabilityLayer.h</itemPath>
+          <itemPath>include/raknet/ReplicaEnums.h</itemPath>
+          <itemPath>include/raknet/ReplicaManager3.h</itemPath>
+          <itemPath>include/raknet/Router2.h</itemPath>
+          <itemPath>include/raknet/SecureHandshake.h</itemPath>
+          <itemPath>include/raknet/SendToThread.h</itemPath>
+          <itemPath>include/raknet/SignaledEvent.h</itemPath>
+          <itemPath>include/raknet/SimpleMutex.h</itemPath>
+          <itemPath>include/raknet/SimpleTCPServer.h</itemPath>
+          <itemPath>include/raknet/SingleProducerConsumer.h</itemPath>
+          <itemPath>include/raknet/SocketDefines.h</itemPath>
+          <itemPath>include/raknet/SocketIncludes.h</itemPath>
+          <itemPath>include/raknet/SocketLayer.h</itemPath>
+          <itemPath>include/raknet/StatisticsHistory.h</itemPath>
+          <itemPath>include/raknet/StringCompressor.h</itemPath>
+          <itemPath>include/raknet/StringTable.h</itemPath>
+          <itemPath>include/raknet/SuperFastHash.h</itemPath>
+          <itemPath>include/raknet/TCPInterface.h</itemPath>
+          <itemPath>include/raknet/TableSerializer.h</itemPath>
+          <itemPath>include/raknet/TeamBalancer.h</itemPath>
+          <itemPath>include/raknet/TeamManager.h</itemPath>
+          <itemPath>include/raknet/TelnetTransport.h</itemPath>
+          <itemPath>include/raknet/ThreadPool.h</itemPath>
+          <itemPath>include/raknet/ThreadsafePacketLogger.h</itemPath>
+          <itemPath>include/raknet/TransportInterface.h</itemPath>
+          <itemPath>include/raknet/TwoWayAuthentication.h</itemPath>
+          <itemPath>include/raknet/UDPForwarder.h</itemPath>
+          <itemPath>include/raknet/UDPProxyClient.h</itemPath>
+          <itemPath>include/raknet/UDPProxyCommon.h</itemPath>
+          <itemPath>include/raknet/UDPProxyCoordinator.h</itemPath>
+          <itemPath>include/raknet/UDPProxyServer.h</itemPath>
+          <itemPath>include/raknet/VariableDeltaSerializer.h</itemPath>
+          <itemPath>include/raknet/VariableListDeltaTracker.h</itemPath>
+          <itemPath>include/raknet/VariadicSQLParser.h</itemPath>
+          <itemPath>include/raknet/VitaIncludes.h</itemPath>
+          <itemPath>include/raknet/WSAStartupSingleton.h</itemPath>
+          <itemPath>include/raknet/WindowsIncludes.h</itemPath>
+          <itemPath>include/raknet/XBox360Includes.h</itemPath>
+          <itemPath>include/raknet/_FindFirst.h</itemPath>
+          <itemPath>include/raknet/gettimeofday.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>include</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>Lib</pElem>
+          </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>Lib</pElem>
+          </linkerDynSerch>
+          <linkerLibItems>
+            <linkerLibLibItem>RakNetDLL</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="include/raknet/AutopatcherPatchContext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/AutopatcherRepositoryInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/Base64Encoder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/BitStream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CCRakNetSlidingWindow.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/CCRakNetUDT.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CheckSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CloudClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CloudCommon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CloudServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CommandParserInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/ConnectionGraph2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ConsoleServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DR_SHA1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_BPlusTree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_BinarySearchTree.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_BytePool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_ByteQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Hash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_HuffmanEncodingTree.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_HuffmanEncodingTreeFactory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_HuffmanEncodingTreeNode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_LinkedList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_List.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Map.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_MemoryPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Multilist.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_OrderedChannelHeap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_OrderedList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_QueueLinkedList.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_RangeList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Table.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_ThreadsafeAllocatingQueue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Tree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_WeightedGraph.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DataCompressor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DirectoryDeltaTransfer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DynDNS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/EmailSender.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/EmptyHeader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/EpochTimeToString.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Export.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FileList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FileListNodeContext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/FileListTransfer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FileListTransferCBInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/FileOperations.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FormatString.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FullyConnectedMesh2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/GetTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Getche.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Gets.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/GridSectorizer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/HTTPConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/HTTPConnection2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/IncrementalReadInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/InternalPacket.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Itoa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Kbhit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/LinuxStrings.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/LocklessTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/LogCommandParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/MTUSize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/MessageFilter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/MessageIdentifiers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatPunchthroughClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatPunchthroughServer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatTypeDetectionClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatTypeDetectionCommon.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatTypeDetectionServer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NativeFeatureIncludes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NativeFeatureIncludesOverrides.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NativeTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/NetworkIDManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/NetworkIDObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PS3Includes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PS4Includes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketConsoleLogger.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/PacketFileLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketOutputWindowLogger.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/PacketPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketPriority.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketizedTCP.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PluginInterface2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RPC4Plugin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Rackspace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakAlloca.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakAssert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakMemoryOverride.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetCommandParser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetDefines.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetDefinesOverrides.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetSmartPtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetSocket.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetSocket2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetStatistics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetTransport2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetVersion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakPeer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakPeerInterface.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakSleep.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakString.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakThread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakWString.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Rand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RandSync.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ReadyEvent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RefCountedObj.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RelayPlugin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ReliabilityLayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ReplicaEnums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ReplicaManager3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Router2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SecureHandshake.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SendToThread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SignaledEvent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SimpleMutex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SimpleTCPServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SingleProducerConsumer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/SocketDefines.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SocketIncludes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SocketLayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/StatisticsHistory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/StringCompressor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/StringTable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SuperFastHash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TCPInterface.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TableSerializer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TeamBalancer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TeamManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TelnetTransport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ThreadPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ThreadsafePacketLogger.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/TransportInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/TwoWayAuthentication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/UDPForwarder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/UDPProxyClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/UDPProxyCommon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/UDPProxyCoordinator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/UDPProxyServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/VariableDeltaSerializer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/VariableListDeltaTracker.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/VariadicSQLParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/VitaIncludes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/WSAStartupSingleton.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/WindowsIncludes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/XBox360Includes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/_FindFirst.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/gettimeofday.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="include/raknet/AutopatcherPatchContext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/AutopatcherRepositoryInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/Base64Encoder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/BitStream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CCRakNetSlidingWindow.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/CCRakNetUDT.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CheckSum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CloudClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CloudCommon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CloudServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/CommandParserInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/ConnectionGraph2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ConsoleServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DR_SHA1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_BPlusTree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_BinarySearchTree.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_BytePool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_ByteQueue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Hash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_HuffmanEncodingTree.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_HuffmanEncodingTreeFactory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_HuffmanEncodingTreeNode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_LinkedList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_List.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Map.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_MemoryPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Multilist.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_OrderedChannelHeap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_OrderedList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_QueueLinkedList.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_RangeList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Table.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_ThreadsafeAllocatingQueue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DS_Tree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DS_WeightedGraph.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DataCompressor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/DirectoryDeltaTransfer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/DynDNS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/EmailSender.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/EmptyHeader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/EpochTimeToString.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Export.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FileList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FileListNodeContext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/FileListTransfer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FileListTransferCBInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/FileOperations.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FormatString.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/FullyConnectedMesh2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/GetTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Getche.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Gets.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/GridSectorizer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/HTTPConnection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/HTTPConnection2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/IncrementalReadInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/InternalPacket.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Itoa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Kbhit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/LinuxStrings.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/LocklessTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/LogCommandParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/MTUSize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/MessageFilter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/MessageIdentifiers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatPunchthroughClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatPunchthroughServer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatTypeDetectionClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatTypeDetectionCommon.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NatTypeDetectionServer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NativeFeatureIncludes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NativeFeatureIncludesOverrides.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/NativeTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/NetworkIDManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/NetworkIDObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PS3Includes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PS4Includes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketConsoleLogger.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/PacketFileLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketOutputWindowLogger.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/PacketPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketPriority.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PacketizedTCP.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/PluginInterface2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RPC4Plugin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Rackspace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakAlloca.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakAssert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakMemoryOverride.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetCommandParser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetDefines.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetDefinesOverrides.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetSmartPtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetSocket.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetSocket2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetStatistics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetTransport2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakNetVersion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakPeer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakPeerInterface.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakSleep.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakString.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakThread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RakWString.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Rand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RandSync.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ReadyEvent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RefCountedObj.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/RelayPlugin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ReliabilityLayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ReplicaEnums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ReplicaManager3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/Router2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SecureHandshake.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SendToThread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SignaledEvent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SimpleMutex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SimpleTCPServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SingleProducerConsumer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/SocketDefines.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SocketIncludes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SocketLayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/StatisticsHistory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/StringCompressor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/StringTable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/SuperFastHash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TCPInterface.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TableSerializer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TeamBalancer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TeamManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/TelnetTransport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ThreadPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/ThreadsafePacketLogger.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/TransportInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/TwoWayAuthentication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/UDPForwarder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/UDPProxyClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/UDPProxyCommon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/UDPProxyCoordinator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/UDPProxyServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/VariableDeltaSerializer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/VariableListDeltaTracker.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/VariadicSQLParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/VitaIncludes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/WSAStartupSingleton.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/raknet/WindowsIncludes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/XBox360Includes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/_FindFirst.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/raknet/gettimeofday.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
