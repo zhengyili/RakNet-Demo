@@ -4,13 +4,11 @@
  * 
  * Created on October 17, 2014, 10:52 AM
  */
-
-#include <../4.8.2/iostream>
-
 #include "Voice.h"
 
 Voice::Voice() {
-	err = Pa_Initialize();	
+	std::cout << Pa_GetVersionText() << std::endl;
+	err = Pa_Initialize();
 	rakPeer = RakNet::RakPeerInterface::GetInstance();
 }
 
@@ -19,22 +17,21 @@ Voice::~Voice() {
 	RakNet::RakPeerInterface::DestroyInstance(rakPeer);
 }
 
-static int c_callback(void *inputBuffer, void *outputBuffer,
-		unsigned long framesPerBuffer,
-		PaTimestamp outTime, void *userData) {
+static int c_callback(const void *inputBuffer, void *outputBuffer, unsigned long framesPerBuffer,
+		const PaStreamCallbackTimeInfo* outTime, const PaStreamCallbackFlags statusFlags, void *userData) {
 	Voice *voice = (Voice*) userData;
-	return voice->portAudioCallback(inputBuffer, outputBuffer);
+	return voice->portAudioCallback((void *) inputBuffer, outputBuffer);
 }
 
 void Voice::run() {
 	if (err != paNoError) {
-		std::cerr << "Pa_Initialize fail:" << Pa_GetErrorText(err) << Pa_GetHostError() << std::endl;
+		std::cerr << "Pa_Initialize fail:" << Pa_GetErrorText(err) << std::endl;
 		return;
 	}
-	
+
 	mute = false;
 
-	PortAudioStream *stream;
+	PaStream *stream;
 
 	unsigned int maxConnectionsAllowed = 4;
 	unsigned int maxPlayersPerServer = 4;
@@ -43,7 +40,7 @@ void Voice::run() {
 	RakNet::SocketDescriptor socketDescriptor(serverPort, 0);
 
 	if (rakPeer->Startup(maxConnectionsAllowed, &socketDescriptor, 1) != RakNet::RAKNET_STARTED) {
-		std::cerr << "Startup fail:" << std::endl;		
+		std::cerr << "Startup fail:" << std::endl;
 		return;
 	}
 
@@ -52,9 +49,47 @@ void Voice::run() {
 	rakPeer->AttachPlugin(&rakVoice);
 	rakVoice.Init(8000, (2048 / (32000 / 8000)) * sizeof (short));
 
+	PaDeviceIndex devin, devout, numdev;
+	const PaDeviceInfo *info;
+	int i;
+
+	numdev = Pa_GetDeviceCount();
+
+	std::cout << "input device: " << std::endl;
+	for (i = 0; i < numdev; i++) {
+		info = Pa_GetDeviceInfo((PaDeviceIndex) i);
+		if (info->maxInputChannels > 0) 
+		{
+			std::cout << i << ": " << info->name << std::endl;
+		}
+	}
+	std::cout << "choose device for input: " << std::endl;
+	std::cin >> devin;
+
+	std::cout << "output device: " << std::endl;
+	for (i = 0; i < numdev; i++) {
+		info = Pa_GetDeviceInfo((PaDeviceIndex) i);
+		if (info->maxOutputChannels > 0) 
+		{
+			std::cout << i << ": " << info->name << std::endl;
+		}
+	}
+	std::cout << "choose device for output: " << std::endl;
+	std::cin >> devout;
+
+	PaStreamParameters inparam, outparam;
+	memset(&inparam, 0, sizeof (PaStreamParameters));
+	inparam.device = devin;
+	inparam.channelCount = 1;
+	inparam.sampleFormat = paInt16;
+	
+	memset(&outparam, 0, sizeof (PaStreamParameters));
+	inparam.device = devout;
+	inparam.channelCount = 1;
+	inparam.sampleFormat = paInt16;
+
 	PaError err = Pa_OpenStream(&stream,
-			Pa_GetDefaultInputDeviceID(), 1, paInt16, NULL, Pa_GetDefaultOutputDeviceID(), 1, paInt16, NULL,
-			8000, (2048 / (32000 / 8000)), 0, 0, c_callback, 0);
+			&inparam, &outparam, 8000, (2048 / (32000 / 8000)), paNoFlag, c_callback, this);
 
 	if (err != paNoError) {
 		std::cerr << "Pa_OpenStream fail:" << Pa_GetErrorText(err) << std::endl;
@@ -73,7 +108,7 @@ void Voice::run() {
 	while (1) {
 		char ip[256];
 		std::cout << "Enter IP of remote system: " << std::endl;
-		std::cin.getline(ip, sizeof(ip));
+		std::cin.getline(ip, sizeof (ip));
 		if (ip[0] == 0)
 			strcpy(ip, "127.0.0.1");
 

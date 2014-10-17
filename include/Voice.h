@@ -9,8 +9,8 @@
 #define	VOICE_H
 
 #include <iostream> 
+#include <portaudio.h>
 
-#include "portaudio.h"
 #include "RakVoice.h"
 
 #include "raknet/MessageIdentifiers.h"
