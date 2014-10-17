@@ -47,7 +47,7 @@ void Voice::run() {
 	rakPeer->SetMaximumIncomingConnections(maxPlayersPerServer);
 
 	rakPeer->AttachPlugin(&rakVoice);
-	rakVoice.Init(8000, (2048 / (32000 / 8000)) * sizeof (paInt16));
+	rakVoice.Init(SAMPLE_RATE, (2048 / (32000 / SAMPLE_RATE)) * sizeof (short));
 
 	PaDeviceIndex devin, devout, numdev;
 	const PaDeviceInfo *info;
@@ -63,13 +63,13 @@ void Voice::run() {
 		info = Pa_GetDeviceInfo((PaDeviceIndex) i);
 		if (info->maxInputChannels > 0) 
 		{
-			std::cout << i << ": " << info->name << std::endl;
+			std::cout << i << ": " << info->name << ", sample rate: " << info->defaultSampleRate << std::endl;
 		}
 	}
 	std::cout << "choose device for input: " << std::endl;
 	std::cin >> devin;
 	
-	inparam.device = devin;
+	inparam.device = Pa_GetDefaultInputDevice();
 	inparam.channelCount = 1;
 	inparam.sampleFormat = paInt16;
 	
@@ -80,17 +80,19 @@ void Voice::run() {
 		info = Pa_GetDeviceInfo((PaDeviceIndex) i);
 		if (info->maxOutputChannels > 0) 
 		{
-			std::cout << i << ": " << info->name << std::endl;
+			std::cout << i << ": " << info->name << ", sample rate: " << info->defaultSampleRate << std::endl;
 		}
 	}
 	std::cout << "choose device for output: " << std::endl;
 	std::cin >> devout;
 	
-	outparam.device = devout;
+	outparam.device = Pa_GetDefaultOutputDevice();
 	outparam.channelCount = 1;
 	outparam.sampleFormat = paInt16;
+	
+	info = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice());
 
-	PaError err = Pa_OpenStream(&stream, &inparam, &outparam, SAMPLE_RATE, FRAMES_PER_BUFFER, paNoFlag, c_callback, this);
+	PaError err = Pa_OpenStream(&stream, &inparam, &outparam, info->defaultSampleRate, FRAMES_PER_BUFFER, paNoFlag, c_callback, this);
 
 	if (err != paNoError) {
 		std::cerr << "Pa_OpenStream fail:" << Pa_GetErrorText(err) << std::endl;

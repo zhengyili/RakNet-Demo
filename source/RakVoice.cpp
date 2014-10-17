@@ -155,37 +155,19 @@ bool RakVoice::SendFrame(RakNetGUID recipient, void *inputBuffer)
 		else
 			remainingBufferSize=channel->outgoingReadIndex-channel->outgoingWriteIndex;
 
-#ifdef _DEBUG
-		RakAssert(remainingBufferSize>0 && remainingBufferSize <= totalBufferSize);
-	//	printf("SendFrame: buff=%i writeIndex=%i readIndex=%i\n",remainingBufferSize, channel->outgoingWriteIndex, channel->outgoingReadIndex);
-
-		//printf("Writing %i bytes to write offset %i. %i %i.\n", bufferSizeBytes, channel->outgoingWriteIndex, *((char*)inputBuffer+channel->outgoingWriteIndex), *((char*)inputBuffer+channel->outgoingWriteIndex+bufferSizeBytes-1));
-#endif
-
 		// Copy encoded sound to the outgoing buffer for that channel.  This has to be fast, since this function is likely to be called from a locked buffer
 		// I allocated the buffer to be a size multiple of bufferSizeBytes so don't have to watch for overflow on this line
 		memcpy(channel->outgoingBuffer + channel->outgoingWriteIndex, inputBuffer, bufferSizeBytes );
 
-#ifdef _DEBUG
-		RakAssert(channel->outgoingWriteIndex+bufferSizeBytes <= totalBufferSize);
-#endif
-
 
 		// Increment the write index, wrapping if needed.
 		channel->outgoingWriteIndex+=bufferSizeBytes;
-#ifdef _DEBUG
-		// Verify that the write is aligned to the size of outgoingBuffer
-		RakAssert(channel->outgoingWriteIndex <= totalBufferSize);
-#endif
+
 		if (channel->outgoingWriteIndex==totalBufferSize)
 			channel->outgoingWriteIndex=0;
 
 		if (bufferSizeBytes >= remainingBufferSize) // Would go past the current read position
 		{
-#ifdef _DEBUG
-			// This is actually a warning - it means that FRAME_OUTGOING_BUFFER_COUNT wasn't big enough and old data is being overwritten
-			RakAssert(0);
-#endif
 			// Force the read index up one block
 			channel->outgoingReadIndex=(channel->outgoingReadIndex+channel->speexOutgoingFrameSampleCount * SAMPLESIZE)%totalBufferSize;			
 		}
@@ -362,34 +344,6 @@ void RakVoice::Update(void)
 			// Speex returns how many frames it encodes per block.  Each frame is of byte length sampleSize.
 			speexBlockSize = channel->speexOutgoingFrameSampleCount * SAMPLESIZE;
 
-#ifdef PRINT_DEBUG_INFO
-			static int lastPrint=0;
-			if (i==0 && currentTime-lastPrint > 2000)
-			{
-				lastPrint=currentTime;
-				unsigned bytesWaitingToReturn;
-				if (channel->incomingReadIndex <= channel->incomingWriteIndex)
-					bytesWaitingToReturn=channel->incomingWriteIndex-channel->incomingReadIndex;
-				else
-					bytesWaitingToReturn=totalBufferSize-channel->incomingReadIndex+channel->incomingWriteIndex;
-
-				printf("%i bytes to send. incomingMessageNumber=%i. bytesWaitingToReturn=%i.\n", bytesAvailable, channel->incomingMessageNumber, bytesWaitingToReturn );
-			}
-#endif
-
-#ifdef _TEST_LOOPBACK
-			/*
-			if (bufferSizeBytes<bytesAvailable)
-			{
-				printf("Update: bytesAvailable=%i writeIndex=%i readIndex=%i\n",bytesAvailable, channel->outgoingWriteIndex, channel->outgoingReadIndex);
-				memcpy(channel->incomingBuffer + channel->incomingWriteIndex, channel->outgoingBuffer+channel->outgoingReadIndex, bufferSizeBytes);
-				channel->incomingWriteIndex=(channel->incomingWriteIndex+bufferSizeBytes) % totalBufferSize;
-				channel->outgoingReadIndex=(channel->outgoingReadIndex+bufferSizeBytes) % totalBufferSize;
-			}
-			return;
-			*/
-#endif
-
 			// Find out how many frames we can read out of the buffer for speex to encode and send these out.
 			speexFramesAvailable = bytesAvailable / speexBlockSize;
 
@@ -405,9 +359,6 @@ void RakVoice::Update(void)
 					// If the input data would wrap around the buffer, copy it to another buffer first
 					if (channel->outgoingReadIndex + speexBlockSize >= totalBufferSize)
 					{
-#ifdef _DEBUG
-						RakAssert(speexBlockSize < 2048-1);
-#endif
 						unsigned t;
 						for (t=0; t < speexBlockSize; t++)
 							tempOutput[t+headerSize]=channel->outgoingBuffer[t%totalBufferSize];
@@ -416,29 +367,6 @@ void RakVoice::Update(void)
 					else
 						inputBuffer=channel->outgoingBuffer+channel->outgoingReadIndex;
 
-#ifdef _DEBUG
-					/*
-					printf("In: ");
-					if (shortSampleType)
-					{
-						short *blah = (short*) inputBuffer;
-						for (int p=0; p < 5; p++)
-						{
-							printf("%.i ", blah[p]);
-						}
-					}
-					else
-					{
-						float *blah = (float*) inputBuffer;
-						for (int p=0; p < 5; p++)
-						{
-							printf("%.3f ", blah[p]);
-						}
-					}
-
-					printf("\n");
-*/
-#endif
 					int is_speech=1;
 
 					// Run preprocessor if required
@@ -459,25 +387,7 @@ void RakVoice::Update(void)
 
 					channel->isSendingVoiceData=true;
 
-#ifdef _DEBUG
-//					printf("Update: bytesAvailable=%i writeIndex=%i readIndex=%i\n",bytesAvailable, channel->outgoingWriteIndex, channel->outgoingReadIndex);
-#endif
-
 					bytesWritten = speex_bits_write(&speexBits, tempOutput+headerSize, 2048-headerSize);
-#ifdef _DEBUG
-					// If this assert hits then you need to increase the size of the temp buffer, but this is really a bug because
-					// voice packets should never be bigger than a few hundred bytes.
-					RakAssert(bytesWritten!=2048-headerSize);
-#endif
-
-//					static int bytesSent=0;
-//					bytesSent+= bytesWritten+headerSize;
-//					printf("bytesSent=%i\n", bytesSent);
-
-#ifdef PRINT_DEBUG_INFO
-static int voicePacketsSent=0;
-printf("%i ", voicePacketsSent++);
-#endif
 
 					// at +1, because the first byte in the buffer has the ID for RakNet.
 					memcpy(tempOutput+1, &channel->outgoingMessageNumber, sizeof(unsigned short));

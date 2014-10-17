@@ -5,6 +5,7 @@ RakNet-Demo
 sudo apt-get install libportaudio-ocaml-dev
 sudo apt-get install libspeex-dev
 sudo apt-get install libspeexdsp-dev
+sudo apt-get purge bluez-alsa
 ```
 
 ```shell
