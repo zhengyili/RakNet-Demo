@@ -6,6 +6,7 @@
  */
 
 #include "Server.h"
+#include "raknet/BitStream.h"
 
 Server::Server() {
 }
@@ -30,19 +31,38 @@ void Server::run() {
 
 	server->SetMaximumIncomingConnections(maxPlayersPerServer);
 
+	RakNet::Packet *packet;
+	unsigned char typeId;
+
 	while (1) {
-		RakNet::Packet *packet = server->Receive();
+		packet = server->Receive();
 		if (packet) {
-			switch (packet->data[0]) {
+			RakNet::BitStream stream(packet->data, packet->length, false);
+
+			stream.Read(typeId);
+			switch (typeId) {
 				case ID_USER_PACKET_ENUM:
-					std::cout << "Receive data:\n" << packet->data << std::endl;
+				{
+					RakNet::RakString msg;
+					stream.Read(msg);
+					std::cout << "Receive msg:" << msg << std::endl;
+
+					RakNet::BitStream sendStream;
+					sendStream.Write((RakNet::MessageID)ID_USER_PACKET_ENUM);
+					sendStream.Write(RakNet::RakString("Welcome!"));
+
+					uint32_t sends = server->Send(&sendStream, HIGH_PRIORITY, RELIABLE_ORDERED, 0, packet->systemAddress, false);
+					std::cout << "send client msg:" << sends << std::endl;
 					break;
+				}
 				default:
 					break;
 			}
 
-		}
-		server->DeallocatePacket(packet);
+			server->DeallocatePacket(packet);
+		}		
 	}
+	
+	RakNet::RakPeerInterface::DestroyInstance(server);
 }
 

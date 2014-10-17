@@ -25,33 +25,56 @@ void Client::run() {
 	client->Startup(1, &socketDescriptor, 1);
 
 	bool ret = (client->Connect("127.0.0.1", serverPort, NULL, 0, 0) == RakNet::CONNECTION_ATTEMPT_STARTED);
-	
+
 	RakAssert(ret);
-	
+
 	RakNet::Packet *packet;
 	bool connected = false;
+
+	unsigned char typeId;
 
 	while (1) {
 		packet = client->Receive();
 		if (packet) {
-			if (packet->data[0] == ID_CONNECTION_REQUEST_ACCEPTED) {
-				connected = true;
-				std::cout << "connect success" << std::endl;
+			std::cout << "Receive" << std::endl;
+			RakNet::BitStream stream(packet->data, packet->length, false);
 
-				char flag = ID_USER_PACKET_ENUM;
-				char buffer[] = " hello world\n";
+			stream.Read(typeId);
 
-				buffer[0] = flag;
+			switch (typeId) {
+				case ID_CONNECTION_REQUEST_ACCEPTED:
+				{
+					connected = true;
+					std::cout << "connect success" << std::endl;
 
-				uint32_t sends = client->Send((const char*)buffer, strlen(buffer) + 1, HIGH_PRIORITY, RELIABLE_ORDERED, 0, RakNet::UNASSIGNED_SYSTEM_ADDRESS, true);
-				std::cout << "send return:" << sends << std::endl;
+					RakNet::RakString msg("hello world!");
+
+					RakNet::BitStream sendStream;
+					sendStream.Write((RakNet::MessageID)ID_USER_PACKET_ENUM);
+					sendStream.Write(msg);
+
+					uint32_t sends = client->Send(&sendStream, HIGH_PRIORITY, RELIABLE_ORDERED, 0, RakNet::UNASSIGNED_SYSTEM_ADDRESS, true);
+					std::cout << "send server msg:" << sends << std::endl;
+					break;
+				}
+				case ID_USER_PACKET_ENUM:
+				{
+					RakNet::RakString msg;
+					stream.Read(msg);
+					std::cout << "Receive msg from server:" << msg << std::endl;
+					break;
+				}
+				default:
+					break;
 			}
+			client->DeallocatePacket(packet);
 			if (!connected) {
 				std::cout << "connect failed" << std::endl;
-				client->Connect("127.0.0.1", 30050, NULL, 0, 0);
+				break;
 			}
 		}
 	}
-
+	
+	RakNet::RakPeerInterface::DestroyInstance(client);
 }
 
