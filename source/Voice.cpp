@@ -47,13 +47,16 @@ void Voice::run() {
 	rakPeer->SetMaximumIncomingConnections(maxPlayersPerServer);
 
 	rakPeer->AttachPlugin(&rakVoice);
-	rakVoice.Init(8000, (2048 / (32000 / 8000)) * sizeof (short));
+	rakVoice.Init(8000, (2048 / (32000 / 8000)) * sizeof (paInt16));
 
 	PaDeviceIndex devin, devout, numdev;
 	const PaDeviceInfo *info;
 	int i;
 
 	numdev = Pa_GetDeviceCount();
+
+	PaStreamParameters inparam, outparam;
+	memset(&inparam, 0, sizeof (PaStreamParameters));
 
 	std::cout << "input device: " << std::endl;
 	for (i = 0; i < numdev; i++) {
@@ -65,6 +68,12 @@ void Voice::run() {
 	}
 	std::cout << "choose device for input: " << std::endl;
 	std::cin >> devin;
+	
+	inparam.device = devin;
+	inparam.channelCount = 1;
+	inparam.sampleFormat = paInt16;
+	
+	memset(&outparam, 0, sizeof (PaStreamParameters));
 
 	std::cout << "output device: " << std::endl;
 	for (i = 0; i < numdev; i++) {
@@ -76,20 +85,12 @@ void Voice::run() {
 	}
 	std::cout << "choose device for output: " << std::endl;
 	std::cin >> devout;
-
-	PaStreamParameters inparam, outparam;
-	memset(&inparam, 0, sizeof (PaStreamParameters));
-	inparam.device = devin;
-	inparam.channelCount = 1;
-	inparam.sampleFormat = paInt16;
 	
-	memset(&outparam, 0, sizeof (PaStreamParameters));
-	inparam.device = devout;
-	inparam.channelCount = 1;
-	inparam.sampleFormat = paInt16;
+	outparam.device = devout;
+	outparam.channelCount = 1;
+	outparam.sampleFormat = paInt16;
 
-	PaError err = Pa_OpenStream(&stream,
-			&inparam, &outparam, 8000, (2048 / (32000 / 8000)), paNoFlag, c_callback, this);
+	PaError err = Pa_OpenStream(&stream, &inparam, &outparam, SAMPLE_RATE, FRAMES_PER_BUFFER, paNoFlag, c_callback, this);
 
 	if (err != paNoError) {
 		std::cerr << "Pa_OpenStream fail:" << Pa_GetErrorText(err) << std::endl;
@@ -109,10 +110,9 @@ void Voice::run() {
 		char ip[256];
 		std::cout << "Enter IP of remote system: " << std::endl;
 		std::cin.getline(ip, sizeof (ip));
-		if (ip[0] == 0)
-			strcpy(ip, "127.0.0.1");
-
-		rakPeer->Connect(ip, serverPort, 0, 0);
+		if (ip[0] != 0) {
+			rakPeer->Connect(ip, serverPort, 0, 0);
+		}
 
 		packet = rakPeer->Receive();
 		while (packet) {

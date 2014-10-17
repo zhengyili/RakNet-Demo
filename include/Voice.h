@@ -31,7 +31,8 @@ private:
 	RakNet::RakPeerInterface *rakPeer;
 	RakNet::RakVoice rakVoice;
 	PaError err;
-
+	const int SAMPLE_RATE = 44100;
+	const int FRAMES_PER_BUFFER = 1024;
 };
 
 #endif	/* VOICE_H */
