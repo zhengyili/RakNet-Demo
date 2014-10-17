@@ -36,7 +36,7 @@ void Client::run() {
 	while (1) {
 		packet = client->Receive();
 		if (packet) {
-			std::cout << "Receive" << std::endl;
+			std::cout << "Receive from server" << std::endl;
 			RakNet::BitStream stream(packet->data, packet->length, false);
 
 			stream.Read(typeId);

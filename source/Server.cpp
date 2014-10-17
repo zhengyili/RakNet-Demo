@@ -25,9 +25,10 @@ void Server::run() {
 	RakNet::RakPeerInterface *server = RakNet::RakPeerInterface::GetInstance();
 	RakNet::SocketDescriptor socketDescriptor(serverPort, 0);
 
-	bool ret = server->Startup(maxConnectionsAllowed, &socketDescriptor, 1) == RakNet::RAKNET_STARTED;
-
-	RakAssert(ret);
+	if (server->Startup(maxConnectionsAllowed, &socketDescriptor, 1) != RakNet::RAKNET_STARTED) {
+		RakNet::RakPeerInterface::DestroyInstance(server);
+		return;
+	}
 
 	server->SetMaximumIncomingConnections(maxPlayersPerServer);
 
@@ -37,6 +38,7 @@ void Server::run() {
 	while (1) {
 		packet = server->Receive();
 		if (packet) {
+			std::cout << "Receive from client" << std::endl;
 			RakNet::BitStream stream(packet->data, packet->length, false);
 
 			stream.Read(typeId);
@@ -55,14 +57,29 @@ void Server::run() {
 					std::cout << "send client msg:" << sends << std::endl;
 					break;
 				}
+				case ID_NO_FREE_INCOMING_CONNECTIONS:
+				{
+					std::cout << "Server is currently at it's maximum limit." << std::endl;
+					break;
+				}
+				case ID_DISCONNECTION_NOTIFICATION:
+				{
+					std::cout << "A client has disconnected." << std::endl;
+					break;
+				}
+				case ID_CONNECTION_LOST:
+				{
+					std::cout << "A client has lost connection." << std::endl;
+					break;
+				}
 				default:
 					break;
 			}
 
 			server->DeallocatePacket(packet);
-		}		
+		}
 	}
-	
+
 	RakNet::RakPeerInterface::DestroyInstance(server);
 }
 
