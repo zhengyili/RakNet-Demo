@@ -37,15 +37,17 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/source/Client.o \
-	${OBJECTDIR}/source/Server.o
+	${OBJECTDIR}/source/RakVoice.o \
+	${OBJECTDIR}/source/Server.o \
+	${OBJECTDIR}/source/Voice.o
 
 
 # C Compiler Flags
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-std=c++11 -Wall
+CXXFLAGS=-std=c++11 -Wall
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -54,7 +56,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-LLib -Wl,-rpath,Lib -lRakNetDLL
+LDLIBSOPTIONS=-LLib -Wl,-rpath,Lib -lRakNetDLL -lspeex -lspeexdsp -lportaudio
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -67,17 +69,27 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/raknet-demo: ${OBJECTFILES}
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/source/Client.o: source/Client.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Client.o source/Client.cpp
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Client.o source/Client.cpp
+
+${OBJECTDIR}/source/RakVoice.o: source/RakVoice.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/RakVoice.o source/RakVoice.cpp
 
 ${OBJECTDIR}/source/Server.o: source/Server.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Server.o source/Server.cpp
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Server.o source/Server.cpp
+
+${OBJECTDIR}/source/Voice.o: source/Voice.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Voice.o source/Voice.cpp
 
 # Subprojects
 .build-subprojects:

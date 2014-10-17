@@ -163,7 +163,9 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>include/Client.h</itemPath>
+      <itemPath>include/RakVoice.h</itemPath>
       <itemPath>include/Server.h</itemPath>
+      <itemPath>include/Voice.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -173,7 +175,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>source/Client.cpp</itemPath>
+      <itemPath>source/RakVoice.cpp</itemPath>
       <itemPath>source/Server.cpp</itemPath>
+      <itemPath>source/Voice.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -204,7 +208,9 @@
         <ccTool>
           <incDir>
             <pElem>include</pElem>
+            <pElem>include/raknet</pElem>
           </incDir>
+          <commandLine>-std=c++11 -Wall</commandLine>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
@@ -215,12 +221,19 @@
           </linkerDynSerch>
           <linkerLibItems>
             <linkerLibLibItem>RakNetDLL</linkerLibLibItem>
+            <linkerLibLibItem>speex</linkerLibLibItem>
+            <linkerLibLibItem>speexdsp</linkerLibLibItem>
+            <linkerLibLibItem>portaudio</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
       <item path="include/Client.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/RakVoice.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/Server.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Voice.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/raknet/AutopatcherPatchContext.h"
             ex="false"
@@ -642,7 +655,11 @@
       </item>
       <item path="source/Client.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="source/RakVoice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="source/Server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Voice.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -667,7 +684,11 @@
       </compileType>
       <item path="include/Client.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/RakVoice.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/Server.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Voice.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/raknet/AutopatcherPatchContext.h"
             ex="false"
@@ -1089,7 +1110,11 @@
       </item>
       <item path="source/Client.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="source/RakVoice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="source/Server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Voice.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

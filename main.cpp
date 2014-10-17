@@ -16,6 +16,7 @@
 #include "include/raknet/RakNetTypes.h"
 #include "Server.h"
 #include "Client.h"
+#include "Voice.h"
 
 static void show_usage(std::string name) {
 	std::cerr << "RakNet Demo\n\n"
@@ -23,14 +24,16 @@ static void show_usage(std::string name) {
 			<< "\tcommand [options]\n\n"
 			<< boost::format("\t%-20s%s\n") % "-server" % "Run server"
 			<< boost::format("\t%-20s%s\n") % "-client [ip]" % "Run client"
+			<< boost::format("\t%-20s%s\n") % "-voice [ip]" % "Run voice"
 			<< std::endl;
 }
 
 char *l_opt_arg;
-const char* short_options = "sc:";
+const char* short_options = "sc:v:";
 struct option long_options[] = {
 	{ "server", 0, NULL, 's'},
 	{ "client", 1, NULL, 'c'},
+	{ "voice", 1, NULL, 'v'},
 	{ 0, 0, 0, 0},
 };
 
@@ -56,6 +59,14 @@ int main(int argc, char** argv) {
 				std::cout << "Connect server run" << l_opt_arg << std::endl;
 				Client client;
 				client.run();
+				break;
+			}
+			case 'v':
+			{
+				l_opt_arg = optarg;
+				std::cout << "Voice run" << l_opt_arg << std::endl;
+				Voice voice;
+				voice.run();
 				break;
 			}
 		}

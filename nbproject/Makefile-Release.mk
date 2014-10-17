@@ -37,7 +37,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/source/Client.o \
-	${OBJECTDIR}/source/Server.o
+	${OBJECTDIR}/source/RakVoice.o \
+	${OBJECTDIR}/source/Server.o \
+	${OBJECTDIR}/source/Voice.o
 
 
 # C Compiler Flags
@@ -74,10 +76,20 @@ ${OBJECTDIR}/source/Client.o: source/Client.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Client.o source/Client.cpp
 
+${OBJECTDIR}/source/RakVoice.o: source/RakVoice.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/RakVoice.o source/RakVoice.cpp
+
 ${OBJECTDIR}/source/Server.o: source/Server.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Server.o source/Server.cpp
+
+${OBJECTDIR}/source/Voice.o: source/Voice.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Voice.o source/Voice.cpp
 
 # Subprojects
 .build-subprojects:
