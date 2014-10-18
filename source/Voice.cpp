@@ -4,6 +4,8 @@
  * 
  * Created on October 17, 2014, 10:52 AM
  */
+#include <../4.8.2/bits/basic_ios.h>
+
 #include "Voice.h"
 
 Voice::Voice() {
@@ -107,17 +109,28 @@ void Voice::run() {
 
 	RakNet::Packet *packet;
 	unsigned char typeId;
-
+	char ch;
 	while (1) {
-		char ip[256];
-		std::cout << "Enter IP of remote system: " << std::endl;
-		std::cin.getline(ip, sizeof (ip));
-		if (ip[0] != 0) {
-			rakPeer->Connect(ip, serverPort, 0, 0);
+		if (kbhit()) {
+			ch=getch();
+			if (ch=='c')
+			{
+				char ip[256];
+				std::cin.sync();
+				std::cin.ignore();
+				std::cout << "\nEnter IP of remote system: " << std::endl;
+				std::cin.getline(ip, sizeof (ip));
+				std::cout << "ip: " << ip << std::endl;
+				if (ip[0] != 0) {
+					std::cout << "Connect: " << ip << std::endl;
+					rakPeer->Connect(ip, serverPort, 0, 0);
+				}
+			}
 		}
 
 		packet = rakPeer->Receive();
 		while (packet) {
+			std::cout << "Receive data from: " << packet->systemAddress.GetIPVersion() << std::endl;
 			RakNet::BitStream bitStream(packet->data, packet->length, false);
 
 			bitStream.Read(typeId);
