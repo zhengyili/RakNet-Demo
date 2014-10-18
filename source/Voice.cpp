@@ -118,9 +118,9 @@ void Voice::run() {
 
 		packet = rakPeer->Receive();
 		while (packet) {
-			RakNet::BitStream stream(packet->data, packet->length, false);
+			RakNet::BitStream bitStream(packet->data, packet->length, false);
 
-			stream.Read(typeId);
+			bitStream.Read(typeId);
 			switch (typeId) {
 				case ID_CONNECTION_REQUEST_ACCEPTED:
 				{
@@ -139,7 +139,7 @@ void Voice::run() {
 				case ID_NAT_ALREADY_IN_PROGRESS:
 				{
 					RakNet::RakNetGUID guid;
-					stream.Read(guid);
+					bitStream.Read(guid);
 					break;
 				}
 				case ID_NAT_PUNCHTHROUGH_FAILED:
