@@ -4,7 +4,6 @@
  * 
  * Created on October 17, 2014, 10:52 AM
  */
-#include <../4.8.2/bits/basic_ios.h>
 
 #include "Voice.h"
 
@@ -137,9 +136,10 @@ void Voice::run() {
 			switch (typeId) {
 				case ID_CONNECTION_REQUEST_ACCEPTED:
 				{
+					std::cout << "connect success" << std::endl;
 					rakVoice.RequestVoiceChannel(packet->guid);
 					break;
-				}
+				}				
 				case ID_CONNECTION_ATTEMPT_FAILED:
 					break;
 				case ID_RAKVOICE_OPEN_CHANNEL_REQUEST:
@@ -160,8 +160,12 @@ void Voice::run() {
 				case ID_ALREADY_CONNECTED:
 				case ID_RAKVOICE_CLOSE_CHANNEL:
 				case ID_DISCONNECTION_NOTIFICATION:
-				case ID_NEW_INCOMING_CONNECTION:
 					break;
+				case ID_NEW_INCOMING_CONNECTION:
+				{
+					std::cout << "A remote system has successfully connected" << std::endl;
+					break;
+				}
 			}
 
 			rakPeer->DeallocatePacket(packet);

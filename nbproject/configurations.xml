@@ -209,6 +209,7 @@
           <incDir>
             <pElem>include</pElem>
             <pElem>include/raknet</pElem>
+            <pElem>/usr/include/c++/4.8.2</pElem>
           </incDir>
           <commandLine>-std=c++11 -Wall</commandLine>
         </ccTool>
