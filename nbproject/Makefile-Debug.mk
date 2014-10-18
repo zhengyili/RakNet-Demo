@@ -69,27 +69,27 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/raknet-demo: ${OBJECTFILES}
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -I/usr/include/c++/4.8.2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/source/Client.o: source/Client.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Client.o source/Client.cpp
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -I/usr/include/c++/4.8.2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Client.o source/Client.cpp
 
 ${OBJECTDIR}/source/RakVoice.o: source/RakVoice.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/RakVoice.o source/RakVoice.cpp
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -I/usr/include/c++/4.8.2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/RakVoice.o source/RakVoice.cpp
 
 ${OBJECTDIR}/source/Server.o: source/Server.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Server.o source/Server.cpp
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -I/usr/include/c++/4.8.2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Server.o source/Server.cpp
 
 ${OBJECTDIR}/source/Voice.o: source/Voice.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Voice.o source/Voice.cpp
+	$(COMPILE.cc) -g -Iinclude -Iinclude/raknet -I/usr/include/c++/4.8.2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/Voice.o source/Voice.cpp
 
 # Subprojects
 .build-subprojects:
