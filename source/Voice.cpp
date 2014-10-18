@@ -70,7 +70,7 @@ void Voice::run() {
 	std::cout << "choose device for input: " << std::endl;
 	std::cin >> devin;
 	
-	inparam.device = Pa_GetDefaultInputDevice();
+	inparam.device = devin; //Pa_GetDefaultInputDevice();
 	inparam.channelCount = 1;
 	inparam.sampleFormat = paInt16;
 	
@@ -87,11 +87,11 @@ void Voice::run() {
 	std::cout << "choose device for output: " << std::endl;
 	std::cin >> devout;
 	
-	outparam.device = Pa_GetDefaultOutputDevice();
+	outparam.device = devout; //Pa_GetDefaultOutputDevice();
 	outparam.channelCount = 1;
 	outparam.sampleFormat = paInt16;
 	
-	info = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice());
+	info = Pa_GetDeviceInfo(devin);
 
 	PaError err = Pa_OpenStream(&stream, &inparam, &outparam, info->defaultSampleRate, FRAMES_PER_BUFFER, paNoFlag, c_callback, this);
 

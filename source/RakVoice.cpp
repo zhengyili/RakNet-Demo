@@ -19,19 +19,11 @@
 #include <stdlib.h>
 #include "GetTime.h"
 
-#ifdef _DEBUG
 #include <stdio.h>
-#endif
 
 using namespace RakNet;
 
-//#define PRINT_DEBUG_INFO
-
 #define SAMPLESIZE 2
-
-#ifdef PRINT_DEBUG_INFO
-#include <stdio.h>
-#endif
 
 int RakNet::VoiceChannelComp( const RakNetGUID &key, VoiceChannel * const &data )
 {
