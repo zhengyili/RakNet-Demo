@@ -192,7 +192,7 @@ void RakVoice::ReceiveFrame(void *outputBuffer)
 {
 	short *out = (short*)outputBuffer;
 	unsigned i;
-	// Convert the floats to final 16-bits output
+
 	for (i=0; i < bufferSizeBytes / SAMPLESIZE; i++)
 	{
 		if (bufferedOutput[i]>32767.0f)

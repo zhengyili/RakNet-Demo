@@ -129,23 +129,29 @@ void Voice::run() {
 
 		packet = rakPeer->Receive();
 		while (packet) {
-			std::cout << "Receive data from: " << packet->systemAddress.GetIPVersion() << std::endl;
+			std::cout << "Receive data from" << packet->systemAddress.ToString() << std::endl;
 			RakNet::BitStream bitStream(packet->data, packet->length, false);
 
 			bitStream.Read(typeId);
 			switch (typeId) {
 				case ID_CONNECTION_REQUEST_ACCEPTED:
 				{
-					std::cout << "connect success" << std::endl;
+					std::cout << "connect success:" << packet->guid.ToString() << std::endl;
 					rakVoice.RequestVoiceChannel(packet->guid);
 					break;
 				}				
 				case ID_CONNECTION_ATTEMPT_FAILED:
 					break;
 				case ID_RAKVOICE_OPEN_CHANNEL_REQUEST:
+				{
+					std::cout << "ID_RAKVOICE_OPEN_CHANNEL_REQUEST" << std::endl;
 					break;
+				}
 				case ID_RAKVOICE_OPEN_CHANNEL_REPLY:
+				{
+					std::cout << "ID_RAKVOICE_OPEN_CHANNEL_REPLY" << std::endl;
 					break;
+				}
 				case ID_NAT_TARGET_NOT_CONNECTED:
 				case ID_NAT_TARGET_UNRESPONSIVE:
 				case ID_NAT_CONNECTION_TO_TARGET_LOST:
@@ -156,7 +162,15 @@ void Voice::run() {
 					break;
 				}
 				case ID_NAT_PUNCHTHROUGH_FAILED:
+				{
+					break;
+				}
 				case ID_NAT_PUNCHTHROUGH_SUCCEEDED:
+				{
+					std::cout << "ID_NAT_PUNCHTHROUGH_SUCCEEDED" << std::endl;
+					rakPeer->Connect(packet->systemAddress.ToString(false), packet->systemAddress.GetPort(), 0, 0);
+					break;
+				}
 				case ID_ALREADY_CONNECTED:
 				case ID_RAKVOICE_CLOSE_CHANNEL:
 				case ID_DISCONNECTION_NOTIFICATION:
